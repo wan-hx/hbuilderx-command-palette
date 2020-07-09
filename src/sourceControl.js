@@ -21,7 +21,7 @@ function sourceControl(type, cmd, parm) {
             fsPath = parm.fsPath;
             workspaceFolder = parm.workspaceFolder.uri.fsPath;
         }
-        let isActiveState = fs.statSync(fsPath);
+        var isActiveState = fs.statSync(fsPath);
         if (isActiveState.isFile()) {
             currentDir = path.dirname(fsPath);
         } else {
@@ -29,6 +29,7 @@ function sourceControl(type, cmd, parm) {
         }
 
         var sourceDir = path.join(workspaceFolder, '.' + type);
+		console.log('------',fsPath,workspaceFolder,currentDir,sourceDir);
         let isProjectState = fs.statSync(sourceDir);
     } catch (e) {
         return hx.window.showErrorMessage('请选中一个有效的SVN或git项目后再操作。');

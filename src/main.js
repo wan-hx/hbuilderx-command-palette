@@ -10,7 +10,7 @@ const create = require('./createFile.js');
  */
 function main(parm) {
     // 列表数据
-    let picklistdata = [...data.actions, ...data.allCommandList,...data.svn_git];
+    let picklistdata = [...data.allCommandList, ...data.svn_git, ...data.actions ];
 
     hx.window.showQuickPick(picklistdata, {
         placeHolder: '请选择要操作的命令',
