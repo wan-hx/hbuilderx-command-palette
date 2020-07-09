@@ -1,0 +1,36 @@
+{
+    "name": "command-palette",
+    "description": "HBuilderX命令面板",
+    "displayName": "HBuilderX命令面板",
+    "version": "0.0.1-beta",
+    "publisher": "OneOne",
+    "engines": {
+        "HBuilderX": "^2.7.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "main": "./extension",
+    "activationEvents": [
+        "*"
+    ],
+    "contributes": {
+        "commands": [{
+            "command": "extension.commandPalette",
+            "title": "命令面板"
+        }],
+        "menus": {
+            "menubar/tool": [{
+                "group": "z_commands"
+            }, {
+                "command": "extension.commandPalette",
+                "title": "命令面板",
+                "group": "z_commands"
+            }]
+        }
+    },
+    "extensionDependencies": [
+        "plugin-manager"
+    ],
+    "dependencies": {}
+}
