@@ -1,9 +1,11 @@
 const hx = require('hbuilderx');
 
 const data = require('./data.js');
-const openLocalPath = require('./openLocalPath.js');
-const sourceControl = require('./sourceControl.js');
-const create = require('./createFile.js');
+const openLocalPath = require('./utils/openLocalPath.js');
+const sourceControl = require('./utils/sourceControl.js');
+const create = require('./utils/createFile.js');
+const codec = require('./utils/codec.js');
+
 
 /**
  * @description 显示命令面板
@@ -40,6 +42,9 @@ function main(parm) {
                 break;
             case 'standard_create':
                 create.createFile(result.info,parm);
+                break;
+            case 'codec':
+                codec.codec(result.info);
                 break;
             default:
                 break;

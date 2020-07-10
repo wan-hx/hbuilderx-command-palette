@@ -15,12 +15,13 @@ function createFile(filename, parm) {
     } = common.getPath(parm);
 
     // template path
-    let template_path = path.join(__dirname, 'template', filename.slice(1));
+    let template_path = path.join(path.resolve(__dirname,'..'), 'template', filename.slice(1));
     // target path
     let target_path = path.join(currentDir, filename);
     // copy file to target dir
     fs.copyFile(template_path, target_path, (err) => {
         if (err) {
+			console.error(err);
             return hx.window.showErrorMessage(filename + '创建失败!');
         } else {
             hx.workspace.openTextDocument(target_path);

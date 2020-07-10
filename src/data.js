@@ -1304,6 +1304,26 @@ const actions = [{
     "description": "action: visit ask",
     "type": "url",
     "info": "https://ask.dcloud.net.cn/publish/"
+}, {
+    "label": "Url解码: UrlDecode解码",
+    "description": "url decode",
+    "type": "codec",
+    "info": "UrlDecode"
+}, {
+    "label": "Url编码: UrlEncode编码",
+    "description": "url encode",
+    "type": "codec",
+    "info": "UrlEncode"
+}, {
+    "label": "Unicode: 中文转Unicode",
+    "description": "chinese to Unicode",
+    "type": "codec",
+    "info": "ChineseToUnicode"
+}, {
+    "label": "Unicode: Unicode转中文",
+    "description": "Unicode to chinese",
+    "type": "codec",
+    "info": "UnicodeToChinese"
 }]
 
 const svn_git = [{
@@ -1311,6 +1331,11 @@ const svn_git = [{
     "description": "svn update",
     "type": "svn",
     "cmd": "svn update"
+},{
+    "label": "源码管理: svn log",
+    "description": "svn log",
+    "type": "svn",
+    "cmd": "svn log -l 10 -v"
 }, {
     "label": "源码管理: svn clean -Rf .",
     "description": "svn clean",

@@ -40,9 +40,12 @@ function createOutputChannel(channel_name, info) {
     // 显示控制台
     outputChannel.show();
     // 输出内容
-    outputChannel.appendLine("====================================================");
-    for (let s of info) {
-        outputChannel.appendLine('\n' + s);
+    if (typeof(info) == 'string') {
+        outputChannel.appendLine(info);
+    } else {
+        for (let s of info) {
+            outputChannel.appendLine('\n' + s);
+        }
     }
 };
 

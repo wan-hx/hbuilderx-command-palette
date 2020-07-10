@@ -29,7 +29,6 @@ function sourceControl(type, cmd, parm) {
         }
 
         var sourceDir = path.join(workspaceFolder, '.' + type);
-		console.log('------',fsPath,workspaceFolder,currentDir,sourceDir);
         let isProjectState = fs.statSync(sourceDir);
     } catch (e) {
         return hx.window.showErrorMessage('请选中一个有效的SVN或git项目后再操作。');
@@ -38,7 +37,7 @@ function sourceControl(type, cmd, parm) {
     // 执行命令
     let run_cmd = '';
     if (isActiveState.isFile()) {
-        if (cmd.includes('git log')  && isActiveState.isFile()) {
+        if (cmd.includes('log')  && isActiveState.isFile()) {
             let basename = path.basename(fsPath)
             run_cmd = "cd " + currentDir + " && " + cmd + ' ' + basename;
         } else {
