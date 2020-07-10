@@ -1,7 +1,7 @@
 {
     "name": "command-palette",
-    "description": "HBuilderX命令面板",
-    "displayName": "HBuilderX命令面板",
+    "description": "命令面板",
+    "displayName": "命令面板",
     "version": "0.0.1-beta",
     "publisher": "OneOne",
     "engines": {
