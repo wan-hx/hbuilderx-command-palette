@@ -1252,12 +1252,6 @@ const allCommandList = [{
     "command": "workbench.action.openGlobalSettings",
     "type": "hx_command",
     "key": ""
-}, {
-    "label": "TinyPng - png/jpg图片压缩",
-    "description": "plugin: TinyPng",
-    "command": "extension.tinypngCompress",
-    "type": "hx_command",
-    "key": ""
 }]
 
 const actions = [{

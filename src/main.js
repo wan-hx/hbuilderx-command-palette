@@ -1,4 +1,5 @@
 const hx = require('hbuilderx');
+const path = require('path');
 
 const data = require('./data.js');
 const openLocalPath = require('./utils/openLocalPath.js');
@@ -6,13 +7,34 @@ const sourceControl = require('./utils/sourceControl.js');
 const create = require('./utils/createFile.js');
 const codec = require('./utils/codec.js');
 
+const base = require('./utils/base.js');
+
+const pluginmanagerPath = path.join(hx.env.appRoot,'plugins','plugin-manager','pluginmanager.js');
+const pm = require(pluginmanagerPath);
+
+/**
+ * @description activie third plugin，execute command
+ * @param {Object} parm
+ */
+function executeThirdCommand(info) {
+    let {pluginName,command} = info;
+
+    pm.activatePlugin({
+        "id":pluginName,
+        "":""
+    });
+    hx.commands.executeCommand(command);
+};
 
 /**
  * @description 显示命令面板
  */
-function main(parm) {
+async function main(parm) {
     // 列表数据
-    let picklistdata = [...data.allCommandList, ...data.svn_git, ...data.actions ];
+    var picklistdata = [...data.allCommandList, ...data.svn_git, ...data.actions ];
+
+    let allThirdPluginsCommands = await base.getPluginsCommands();
+    picklistdata = [...picklistdata,...allThirdPluginsCommands]
 
     hx.window.showQuickPick(picklistdata, {
         placeHolder: '请选择要操作的命令',
@@ -33,6 +55,9 @@ function main(parm) {
             case 'hx_command':
                 let commandName = result.command;
                 hx.commands.executeCommand(commandName);
+                break;
+            case 'plugin_command':
+                executeThirdCommand(result);
                 break;
             case 'svn':
                 sourceControl.sourceControl('svn',result.cmd,parm);
