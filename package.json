@@ -34,7 +34,7 @@
             ]
         },
         "configuration": {
-            "title": "HBuilderX命令面板",
+            "title": "命令面板 - command-palette",
             "properties": {
                 "commandPalette.isCheckUpdate": {
                     "type": "boolean",
