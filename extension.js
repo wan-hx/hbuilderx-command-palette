@@ -1,8 +1,13 @@
-const hx = require("hbuilderx");
-const main = require("./src/main.js");
+const hx = require('hbuilderx');
+
+const main = require('./src/main.js');
+const check = require('./src/checkUpdate.js');
 
 //该方法将在插件激活的时候调用
 function activate(context) {
+    
+    check.checkUpdate();
+
     let commandPalette = hx.commands.registerCommand('extension.commandPalette', (parm) => {
         main.main(parm);
     });
