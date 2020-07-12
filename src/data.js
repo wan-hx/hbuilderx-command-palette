@@ -1210,18 +1210,6 @@ const allCommandList = [{
     "type": "hx_command",
     "key": ""
 }, {
-    "label": "源码管理: 查看指定svn或git文件的提交历史",
-    "description": "svn/git",
-    "command": "file.showlog",
-    "type": "hx_command",
-    "key": ""
-}, {
-    "label": "源码管理: 文件对比，与最近一次提交比较",
-    "description": "svn/git",
-    "command": "file.compareWithLastVersion",
-    "type": "hx_command",
-    "key": ""
-}, {
     "label": "开发者云端控制台",
     "description": "help: open user center",
     "command": "workbench.action.openusercenter",
@@ -1326,40 +1314,90 @@ const actions = [{
 }]
 
 const svn_git = [{
-    "label": "源码管理: svn update",
+	"label": "SVN插件: 查看日志",
+	"description": "svn log",
+	"type": "hx_command",
+	"command": "file.showlog"
+}, {
+	"label": "SVN插件: 提交",
+	"description": "svn ci -m ''",
+	"type": "hx_command",
+	"command": "files.commit"
+}, {
+	"label": "SVN插件: 比较差异, 与最近一次提交比较",
+	"description": "svn diff",
+	"type": "hx_command",
+	"command": "file.compareWithLastVersion"
+}, {
+	"label": "Git插件: 查看日志",
+	"description": "git log",
+	"type": "hx_command",
+	"command": "file.showlog"
+}, {
+	"label": "Git插件: 提交",
+	"description": "git commit",
+	"type": "hx_command",
+	"command": "files.commit"
+}, {
+	"label": "Git插件: 比较差异, 与最近一次提交比较",
+	"description": "git diff",
+	"type": "hx_command",
+	"command": "file.compareWithLastVersion"
+}, {
+    "label": "svn命令: svn update",
     "description": "svn update",
     "type": "svn",
     "cmd": "svn update"
 },{
-    "label": "源码管理: svn log",
+    "label": "svn命令: svn log",
     "description": "svn log",
     "type": "svn",
     "cmd": "svn log -l 10 -v"
 }, {
-    "label": "源码管理: svn clean -Rf .",
-    "description": "svn clean",
+    "label": "svn命令: svn cleanup",
+    "description": "svn cleanup -Rf .",
     "type": "svn",
     "cmd": "svn clean -Rf ."
 }, {
-    "label": "源码管理: git pull",
+    "label": "Git命令: git pull",
     "description": "git pull",
     "type": "git",
     "cmd": "git pull"
 }, {
-    "label": "源码管理: git pull --rebase",
+    "label": "Git命令: git pull --rebase",
     "description": "git pull",
     "type": "git",
     "cmd": "git pull --rebase"
 }, {
-    "label": "源码管理: git status",
-    "description": "git status",
+    "label": "Git命令: git status",
+    "description": "git status -s",
     "type": "git",
-    "cmd": "git status"
+    "cmd": "git status -s"
 }, {
-    "label": "源码管理: git log 查看最近10条日志",
+    "label": "Git命令: git log 查看最近10条日志",
     "description": "git log",
     "type": "git",
     "cmd": 'git log -n 10 --graph --pretty=format:"%Cblue%ci - %Cred%h - %C(yellow)%ae%Creset(%an) %Cgreen%s (%Cred%ar)"'
+}, {
+    "label": "Git命令: 查看配置信息",
+    "description": "git config --list",
+    "type": "git",
+    "cmd": 'git config --list'
+}, {
+    "label": "Git命令: 查看分支",
+    "description": "git branch -a -vv",
+    "type": "git",
+    "cmd": 'git branch -a -vv'
+}, {
+    "label": "Git命令: 推送",
+    "description": "git push",
+    "type": "git",
+    "cmd": 'git push'
+}, {
+    "label": "Git命令: 列出tag",
+    "description": "git tag",
+    "type": "git",
+    "cmd": 'git tag'
 }]
 
 module.exports = {
