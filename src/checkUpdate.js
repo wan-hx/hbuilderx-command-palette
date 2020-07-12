@@ -6,10 +6,9 @@ const version = require('./version.json')
  */
 function showBox(isMajor) {
     let msg = '插件【命令面板】 发布了新版本！快去HBuilderX插件市场更新吧！';
-    let btn = ['去更新'];
+    let btn = ['去更新','本周不再提醒'];
     if (isMajor) {
         msg = '插件【命令面板】 重要更新！快去HBuilderX插件市场更新吧！'
-        btn.push('本周不再提醒');
     }
     hx.window.showInformationMessage(msg,btn).then(result => {
         if (result === '去更新') {
