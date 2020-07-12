@@ -36,23 +36,6 @@ var walkSync = function(dir, filelist) {
 };
 
 /**
- * @description get HBuilderX baseinfo
- */
-function getHxBaseInfo() {
-    let platform = osName.includes('darwin') ? 'macosx' : 'win32';
-    let versionType = (hx.env.appVersion).includes('alpha') ? 'dailybuild' : 'alpha';
-    // upgrade package config url
-    let url = "https://update.dcloud.net.cn/hbuilderx/" + versionType + "/" + platform + "/plugins/index.json";
-    // hx plugin_dir
-    let hxPluginDir = path.join(hx.env.appRoot, 'plugins')
-    return {
-        url,
-        hxPluginDir
-    }
-};
-
-
-/**
  * @description 获取HBuilderX本机已安装的插件列表
  */
 function getLocalInstalledPluginsList(hxPluginDir) {
@@ -82,6 +65,9 @@ function getPluginDetails(hxPluginDir, pluginName) {
         }
         try {
             let packagePath = path.join(hxPluginDir, pluginName, 'package.json');
+            if (!fs.existsSync(packagePath)) {
+                resolve(info);
+            };
             fs.readFile(packagePath, 'utf8', (err, data) => {
                 if (err) {
                     reject(info)
@@ -113,10 +99,7 @@ async function getPluginsCommands() {
     };
 
     // get hx base info
-    let {
-        url,
-        hxPluginDir
-    } = getHxBaseInfo();
+    let hxPluginDir = path.join(hx.env.appRoot, 'plugins');
 
     // get local HBuilderX installed list
     let installedPluginsList = await getLocalInstalledPluginsList(hxPluginDir);
