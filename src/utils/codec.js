@@ -6,19 +6,37 @@ const common = require('./common.js');
  * @param {Object} str
  */
 function encodeUnicode(str) {
-  var res = [];
-  for (var i = 0; i < str.length; i++) {
-      res[i] = ( "00" + str.charCodeAt(i).toString(16) ).slice(-4);
-  }
-  return "\\u" + res.join("\\u");
+    var res = [];
+    for (var i = 0; i < str.length; i++) {
+        res[i] = ("00" + str.charCodeAt(i).toString(16)).slice(-4);
+    }
+    return "\\u" + res.join("\\u");
 };
+
+
+/**
+ * @description 读取剪贴板
+ */
+function clipboardRead() {
+    return new Promise((resolve, reject) => {
+        let textPromise = hx.env.clipboard.readText();
+        textPromise.then(function(res) {
+            if (res) {
+                resolve(res)
+            } else {
+                reject('')
+            }
+        })
+    });
+};
+
 
 /**
  *@description 编码解码
  */
 async function codec(type) {
-    let content = "\u9504\u79be\u65e5\u5f53\u65e5";
-    switch (type){
+    let content = await clipboardRead();
+    switch (type) {
         case 'UrlDecode':
             const result = await decodeURIComponent(content);
             common.createOutputChannel('解码', result);
@@ -29,11 +47,11 @@ async function codec(type) {
             break;
         case "ChineseToUnicode":
             const encodeUnicodeResult = encodeUnicode(content);
-            common.createOutputChannel('unicode',encodeUnicodeResult);
+            common.createOutputChannel('unicode', encodeUnicodeResult);
             break;
         case "UnicodeToChinese":
             const decodeUnicodeResult = unescape(content.replace(/\\/g, "%"));
-            common.createOutputChannel('unicode',decodeUnicodeResult);
+            common.createOutputChannel('unicode', decodeUnicodeResult);
             break;
         default:
             break;
