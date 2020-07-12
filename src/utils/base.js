@@ -72,7 +72,7 @@ function getLocalInstalledPluginsList(hxPluginDir) {
 /**
  * @description 从package.json获取插件详情
  * @param {Object} hxPluginDir
- * @param {String} pluginName 
+ * @param {String} pluginName
  */
 function getPluginDetails(hxPluginDir, pluginName) {
     return new Promise((resolve, reject) => {
@@ -105,6 +105,13 @@ function getPluginDetails(hxPluginDir, pluginName) {
  * @description get hx plugins commands info
  */
 async function getPluginsCommands() {
+    // check user config
+    let config = hx.workspace.getConfiguration();
+    let isShowThirdPluginCommand = config.get('commandPalette.isShowThirdPluginCommand');
+    if (!isShowThirdPluginCommand) {
+        return []
+    };
+
     // get hx base info
     let {
         url,

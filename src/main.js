@@ -27,17 +27,17 @@ function executeThirdCommand(info) {
 };
 
 /**
- * @description 显示命令面板
+ * @description show command panl
  */
 async function main(parm) {
-    // 列表数据
+    // commands list
     var picklistdata = [...data.allCommandList, ...data.svn_git, ...data.actions ];
 
     let allThirdPluginsCommands = await base.getPluginsCommands();
     picklistdata = [...picklistdata,...allThirdPluginsCommands]
 
     hx.window.showQuickPick(picklistdata, {
-        placeHolder: '请选择要操作的命令',
+        placeHolder: '请选择要操作的菜单或命令',
         matchOnDetail: true,
         matchOnDescription: true
     }).then(function(result) {

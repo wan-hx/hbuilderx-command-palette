@@ -15,22 +15,45 @@
         "*"
     ],
     "contributes": {
-        "commands": [{
-            "command": "extension.commandPalette",
-            "title": "命令面板"
-        }],
-        "menus": {
-            "menubar/tool": [{
-                "group": "z_commands"
-            }, {
+        "commands": [
+            {
                 "command": "extension.commandPalette",
-                "title": "命令面板",
-                "group": "z_commands"
-            }]
+                "title": "命令面板"
+            }
+        ],
+        "menus": {
+            "menubar/tool": [
+                {
+                    "group": "z_commands"
+                },
+                {
+                    "command": "extension.commandPalette",
+                    "title": "命令面板",
+                    "group": "z_commands"
+                }
+            ]
+        },
+        "configuration": {
+            "title": "HBuilderX命令面板",
+            "properties": {
+                "commandPalette.isCheckUpdate": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否检查更新"
+                },
+                "commandPalette.isShowThirdPluginCommand": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否显示非HBuilderX官方插件(即插件市场插件)外的功能列表"
+                }
+            }
         }
     },
     "extensionDependencies": [
         "plugin-manager"
     ],
-    "dependencies": {}
+    "dependencies": {
+        "json-comments": "^0.2.1",
+        "request": "^2.88.2"
+    }
 }

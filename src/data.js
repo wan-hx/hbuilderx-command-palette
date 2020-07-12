@@ -1199,7 +1199,7 @@ const allCommandList = [{
     "type": "hx_command",
     "key": ""
 }, {
-    "label": "本地历史记录",
+    "label": "文件: 本地历史记录",
     "description": "file: file local history",
     "command": "workbench.action.files.localHistory",
     "type": "hx_command",
