@@ -17,7 +17,7 @@ const excludePluginList = [
     'templates', 'akamud.vscode-theme-onedark-2.1.0',
     'theme-default', 'theme-icons-default', 'theme-icons-default-colorful',
     'theme-seti', 'theme-vsode', 'builtinterminal', 'plugin-manager',
-    'weapp-tools', 'uniapp', 'uniapp-cli', 'launcher'
+    'weapp-tools', 'uniapp', 'uniapp-cli', 'launcher','command-palette'
 ];
 
 /**

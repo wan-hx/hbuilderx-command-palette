@@ -11,6 +11,11 @@ const allCommandList = [{
     "type": "hx_command",
     "key": ""
 }, {
+    "label": "工具: 去插件市场安装插件",
+    "description": "tool: plugin market install",
+    "type": "url",
+    "info": "https://ext.dcloud.net.cn/?cat1=1&cat2=11"
+}, {
     "label": "帮助: 查看更新日志",
     "description": "help: hbuilderx release",
     "command": "update.showCurrentReleaseNotes",
@@ -1274,27 +1279,27 @@ const actions = [{
     "type": "standard_create",
     "info": ".eslintrc.js"
 }, {
-    "label": "访问: DCloud插件市场",
+    "label": "帮助: DCloud插件市场",
     "description": "action: visit dcloud",
     "type": "url",
     "info": "https://ext.dcloud.net.cn/?cat1=1&cat2=11"
 }, {
-    "label": "访问: uni-app官网",
+    "label": "帮助: uni-app官网",
     "description": "action: visit uni-app",
     "type": "url",
     "info": "https://uniapp.dcloud.io/"
 }, {
-    "label": "访问: HBuilderX 插件文档",
+    "label": "帮助: HBuilderX 插件文档",
     "description": "action: visit hx doc",
     "type": "url",
     "info": "https://hx.dcloud.net.cn/"
 }, {
-    "label": "访问: DCloud 原生开发者文档",
+    "label": "帮助: DCloud 原生开发者文档",
     "description": "action: visit native",
     "type": "url",
     "info": "https://nativesupport.dcloud.net.cn/"
 }, {
-    "label": "访问: 前往Ask论坛发帖",
+    "label": "帮助: 前往Ask论坛发帖",
     "description": "action: visit ask",
     "type": "url",
     "info": "https://ask.dcloud.net.cn/publish/"
