@@ -1,12 +1,10 @@
 const os = require('os');
 const fs = require('fs');
 const path = require('path');
-// const request = require('request');
 const hx = require('hbuilderx');
 
 const JSONC = require('json-comments');
 
-const osName = os.platform();
 
 const excludeOther = ['.DS_Store', 'package-lock.json', 'etc']
 const excludePluginList = [
@@ -69,17 +67,18 @@ function getPluginDetails(hxPluginDir, pluginName) {
                 resolve(info);
             };
             fs.readFile(packagePath, 'utf8', (err, data) => {
-                if (err) {
-                    reject(info)
-                }
-                let FileContext = JSONC.parse(data);
-                if ('contributes' in FileContext) {
-                    if ('commands' in FileContext.contributes) {
-                        info['data'] = FileContext.contributes.commands;
-                        resolve(info)
+                if (data) {
+                    let FileContext = JSONC.parse(data);
+                    if ('contributes' in FileContext) {
+                        if ('commands' in FileContext.contributes) {
+                            info['data'] = FileContext.contributes.commands;
+                            resolve(info)
+                        }
                     }
+                    resolve(info);
+                } else {
+                    reject(info);
                 }
-                resolve(info)
             })
         } catch (e) {
             reject(info)
