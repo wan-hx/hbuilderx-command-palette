@@ -30,8 +30,12 @@ var fileList = [];
 var walkSync = function(dir, filelist) {
     files = fs.readdirSync(dir);
     filelist = filelist || [];
+    const hxPluginDir = path.join(hx.env.appRoot, 'plugins');
     files.forEach(function(file) {
-        filelist.push(file);
+        let packagePath = path.join(hxPluginDir, file, 'package.json');
+        if (fs.existsSync(packagePath)) {
+            filelist.push(file);
+        };
     });
     return filelist;
 };
@@ -63,11 +67,8 @@ async function getPluginDetails(hxPluginDir, pluginName) {
         "pluginName": pluginName,
         "data": []
     }
-    let packagePath = path.join(hxPluginDir, pluginName, 'package.json');
-    if (!fs.existsSync(packagePath)) {
-        return info;
-    };
     try {
+        let packagePath = path.join(hxPluginDir, pluginName, 'package.json');
         let fr = await readFile(packagePath, "utf-8");
         const FileContext = JSONC.parse(fr);
         if (FileContext) {
@@ -91,8 +92,6 @@ async function getPluginDetails(hxPluginDir, pluginName) {
  */
 async function getPluginsCommands() {
     console.log('[command-palette] start read third plugins package.json.....');
-
-
 
     // check user config
     let config = hx.workspace.getConfiguration();
