@@ -75,6 +75,9 @@ async function getPluginDetails(hxPluginDir, pluginName) {
                     info['data'] = FileContext.contributes.commands;
                 };
             };
+            if (FileContext.hasOwnProperty('displayName')) {
+                info["pluginName"] = FileContext.displayName;
+            }
         };
         return info;
     } catch (err) {
@@ -111,13 +114,17 @@ async function getPluginsCommands() {
             if ('data' in p && 'pluginName' in p) {
                 if (p.data.length || p.data !== undefined) {
                     let tmp1 = p.data.map(function(v) {
-                        return {
-                            'label': p.pluginName + ': ' + v['title'],
+                        let commandInfo = {
+                            'label': v['title'],
                             'description': p.pluginName,
                             'command': v['command'],
                             'type': 'plugin_command',
                             'pluginName': p.pluginName
                         };
+                        if (p.pluginName.length < 15) {
+                            commandInfo.label = p.pluginName + ': ' + v['title']
+                        };
+                        return commandInfo;
                     });
                     result = [...result, ...tmp1];
                 };
