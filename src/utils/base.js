@@ -64,16 +64,17 @@ function getPluginDetails(hxPluginDir, pluginName) {
         try {
             let packagePath = path.join(hxPluginDir, pluginName, 'package.json');
             if (!fs.existsSync(packagePath)) {
-                resolve(info);
+                return reject(info);
             };
             fs.readFile(packagePath, 'utf8', (err, data) => {
                 if (data) {
                     let FileContext = JSONC.parse(data);
-                    if ('contributes' in FileContext) {
-                        if ('commands' in FileContext.contributes) {
+                    if (FileContext.hasOwnProperty('contributes')) {
+                        if (FileContext.contributes.hasOwnProperty('commands')) {
                             info['data'] = FileContext.contributes.commands;
-                            resolve(info)
+                            return resolve(info);
                         }
+                        return resolve(info);
                     }
                     resolve(info);
                 } else {
@@ -81,7 +82,7 @@ function getPluginDetails(hxPluginDir, pluginName) {
                 }
             })
         } catch (e) {
-            reject(info)
+            reject(info);
         }
     })
 };
