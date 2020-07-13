@@ -10,14 +10,15 @@ const JSONC = require('json-comments');
 
 const excludeOther = ['.DS_Store', 'package-lock.json', 'etc']
 const excludePluginList = [
-    'about', 'format', 'hbuilder.root', 'snippet', 'pm', 'ls',
+    'about', 'format', 'hbuilder.root', 'snippet', 'pm', 'ls','SVN','Git',
     'css', 'css-language-features', 'html', 'javascript', 'jshint', 'eslint-js', 'eslint-vue',
     'php', 'node', 'jre', 'npm', 'node_modules', 'nodeserver',
     'qtwebengine', 'hxsimplebrowser', 'cef3', 'qrencode',
+    'builtincef3browser','builtincef3terminal',
     'templates', 'akamud.vscode-theme-onedark-2.1.0',
     'theme-default', 'theme-icons-default', 'theme-icons-default-colorful',
-    'theme-seti', 'theme-vsode', 'builtinterminal', 'plugin-manager',
-    'weapp-tools', 'uniapp', 'uniapp-cli', 'launcher', 'command-palette'
+    'theme-seti', 'theme-vsode', 'builtinterminal','builtinbrowser' ,'plugin-manager',
+    'weapp-tools', 'uniapp', 'uniapp-cli','uniapp-debugger' ,'launcher', 'command-palette'
 ];
 
 /**
@@ -91,6 +92,8 @@ async function getPluginDetails(hxPluginDir, pluginName) {
 async function getPluginsCommands() {
     console.log('[command-palette] start read third plugins package.json.....');
 
+
+
     // check user config
     let config = hx.workspace.getConfiguration();
     let isShowThirdPluginCommand = config.get('commandPalette.isShowThirdPluginCommand');
@@ -102,7 +105,7 @@ async function getPluginsCommands() {
     let hxPluginDir = path.join(hx.env.appRoot, 'plugins');
 
     // get local HBuilderX installed list
-    let installedPluginsList = await getLocalInstalledPluginsList(hxPluginDir);
+    var installedPluginsList = await getLocalInstalledPluginsList(hxPluginDir);
 
     const promises = installedPluginsList.map(pluginName => {
         return getPluginDetails(hxPluginDir, pluginName);
@@ -132,7 +135,9 @@ async function getPluginsCommands() {
         };
         if (result.length !== 0) {
             let fpath = path.join(__dirname,'thirdPlugin.json');
-            let str = JSON.stringify({"commands":result},"","\t")
+            let str = JSON.stringify(
+                {"commands":result,"installedPluginsList":installedPluginsList},"","\t"
+            );
             fs.writeFile(fpath, str, function(err) {
                 if (err) {
                     console.log('[command-palette] 读取其他插件command命令菜单错误.....',err)

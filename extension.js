@@ -15,7 +15,7 @@ function activate(context) {
     };
     setTimeout(function() {
         getThirdPluginsCommand();
-    }, 10);
+    }, 20);
 
     let commandPalette = hx.commands.registerCommand('extension.commandPalette', (parm) => {
         main.main(parm);
