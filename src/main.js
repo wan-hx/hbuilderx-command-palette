@@ -7,10 +7,10 @@ const sourceControl = require('./utils/sourceControl.js');
 const create = require('./utils/createFile.js');
 const codec = require('./utils/codec.js');
 
-const base = require('./utils/base.js');
-
 const pluginmanagerPath = path.join(hx.env.appRoot,'plugins','plugin-manager','pluginmanager.js');
 const pm = require(pluginmanagerPath);
+
+const thirdPlugin = require('./utils/thirdPlugin.json');
 
 /**
  * @description activie third plugin，execute command
@@ -33,8 +33,13 @@ async function main(parm) {
     // commands list
     var picklistdata = [...data.allCommandList, ...data.svn_git, ...data.actions ];
 
-    let allThirdPluginsCommands = await base.getPluginsCommands();
-    picklistdata = [...picklistdata,...allThirdPluginsCommands]
+    try{
+        let allThirdPluginsCommands = thirdPlugin.commands;
+        picklistdata = [...picklistdata,...allThirdPluginsCommands]
+    }catch(e){
+        console.log(e);
+    }
+
 
     hx.window.showQuickPick(picklistdata, {
         placeHolder: '请选择要操作的菜单或命令',

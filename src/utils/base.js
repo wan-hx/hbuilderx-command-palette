@@ -1,5 +1,7 @@
 const os = require('os');
 const fs = require('fs');
+const readFile = require("util").promisify(fs.readFile);
+
 const path = require('path');
 const hx = require('hbuilderx');
 
@@ -9,13 +11,13 @@ const JSONC = require('json-comments');
 const excludeOther = ['.DS_Store', 'package-lock.json', 'etc']
 const excludePluginList = [
     'about', 'format', 'hbuilder.root', 'snippet', 'pm', 'ls',
-    'css', 'css-language-features', 'html', 'javascript', 'jshint', 'eslint-js',
+    'css', 'css-language-features', 'html', 'javascript', 'jshint', 'eslint-js', 'eslint-vue',
     'php', 'node', 'jre', 'npm', 'node_modules', 'nodeserver',
     'qtwebengine', 'hxsimplebrowser', 'cef3', 'qrencode',
     'templates', 'akamud.vscode-theme-onedark-2.1.0',
     'theme-default', 'theme-icons-default', 'theme-icons-default-colorful',
     'theme-seti', 'theme-vsode', 'builtinterminal', 'plugin-manager',
-    'weapp-tools', 'uniapp', 'uniapp-cli', 'launcher','command-palette'
+    'weapp-tools', 'uniapp', 'uniapp-cli', 'launcher', 'command-palette'
 ];
 
 /**
@@ -55,42 +57,37 @@ function getLocalInstalledPluginsList(hxPluginDir) {
  * @param {Object} hxPluginDir
  * @param {String} pluginName
  */
-function getPluginDetails(hxPluginDir, pluginName) {
-    return new Promise((resolve, reject) => {
-        var info = {
-            "pluginName": pluginName,
-            "data": []
-        }
-        try {
-            let packagePath = path.join(hxPluginDir, pluginName, 'package.json');
-            if (!fs.existsSync(packagePath)) {
-                return reject(info);
+async function getPluginDetails(hxPluginDir, pluginName) {
+    var info = {
+        "pluginName": pluginName,
+        "data": []
+    }
+    let packagePath = path.join(hxPluginDir, pluginName, 'package.json');
+    if (!fs.existsSync(packagePath)) {
+        return info;
+    };
+    try {
+        let fr = await readFile(packagePath, "utf-8");
+        const FileContext = JSONC.parse(fr);
+        if (FileContext) {
+            if (FileContext.hasOwnProperty('contributes')) {
+                if (FileContext.contributes.hasOwnProperty('commands')) {
+                    info['data'] = FileContext.contributes.commands;
+                };
             };
-            fs.readFile(packagePath, 'utf8', (err, data) => {
-                if (data) {
-                    let FileContext = JSONC.parse(data);
-                    if (FileContext.hasOwnProperty('contributes')) {
-                        if (FileContext.contributes.hasOwnProperty('commands')) {
-                            info['data'] = FileContext.contributes.commands;
-                            return resolve(info);
-                        }
-                        return resolve(info);
-                    }
-                    resolve(info);
-                } else {
-                    reject(info);
-                }
-            })
-        } catch (e) {
-            reject(info);
-        }
-    })
+        };
+        return info;
+    } catch (err) {
+        return info;
+    }
 };
 
 /**
  * @description get hx plugins commands info
  */
 async function getPluginsCommands() {
+    console.log('[command-palette] start read third plugins package.json.....');
+
     // check user config
     let config = hx.workspace.getConfiguration();
     let isShowThirdPluginCommand = config.get('commandPalette.isShowThirdPluginCommand');
@@ -105,30 +102,36 @@ async function getPluginsCommands() {
     let installedPluginsList = await getLocalInstalledPluginsList(hxPluginDir);
 
     const promises = installedPluginsList.map(pluginName => {
-        return getPluginDetails(hxPluginDir, pluginName)
+        return getPluginDetails(hxPluginDir, pluginName);
     });
 
-    return new Promise((resolve, reject) => {
-        var result = [];
-        Promise.all(promises).then(function(plugins) {
-            for (let p of plugins) {
-                if ('data' in p && 'pluginName' in p) {
-                    if (p.data.length || p.data !== undefined) {
-                        let tmp1 = p.data.map(function(v) {
-                            return {
-                                'label': p.pluginName + ': ' + v['title'],
-                                'description': p.pluginName,
-                                'command': v['command'],
-                                'type': 'plugin_command',
-                                'pluginName': p.pluginName
-                            };
-                        });
-                        result = [...result, ...tmp1];
-                    };
+    var result = [];
+    Promise.all(promises).then(function(plugins) {
+        for (let p of plugins) {
+            if ('data' in p && 'pluginName' in p) {
+                if (p.data.length || p.data !== undefined) {
+                    let tmp1 = p.data.map(function(v) {
+                        return {
+                            'label': p.pluginName + ': ' + v['title'],
+                            'description': p.pluginName,
+                            'command': v['command'],
+                            'type': 'plugin_command',
+                            'pluginName': p.pluginName
+                        };
+                    });
+                    result = [...result, ...tmp1];
                 };
             };
-            resolve(result);
-        });
+        };
+        if (result.length !== 0) {
+            let fpath = path.join(__dirname,'thirdPlugin.json');
+            let str = JSON.stringify({"commands":result},"","\t")
+            fs.writeFile(fpath, str, function(err) {
+                if (err) {
+                    console.log('[command-palette] 读取其他插件command命令菜单错误.....',err)
+                }
+            })
+        }
     });
 }
 
