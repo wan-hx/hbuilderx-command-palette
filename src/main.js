@@ -10,8 +10,6 @@ const codec = require('./utils/codec.js');
 const pluginmanagerPath = path.join(hx.env.appRoot,'plugins','plugin-manager','pluginmanager.js');
 const pm = require(pluginmanagerPath);
 
-const thirdPlugin = require('./utils/thirdPlugin.json');
-
 /**
  * @description activie third plugin，execute command
  * @param {Object} parm
@@ -34,6 +32,7 @@ async function main(parm) {
     var picklistdata = [...data.allCommandList, ...data.svn_git, ...data.actions ];
 
     try{
+        let thirdPlugin = require('./utils/thirdPlugin.json');
         let allThirdPluginsCommands = thirdPlugin.commands;
         picklistdata = [...picklistdata,...allThirdPluginsCommands]
     }catch(e){
