@@ -1,8 +1,8 @@
 {
     "name": "command-palette",
-    "description": "命令面板, 快捷调用HBuilderX命令菜单、第三方插件命令菜单等",
+    "description": "命令面板, 类似vscode的命令面板, 快捷调用HBuilderX命令菜单、第三方插件命令菜单等",
     "displayName": "命令面板",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "OneOne",
     "engines": {
         "HBuilderX": "^2.7.0"
