@@ -74,6 +74,7 @@ function getLocalInstalledPluginsList(hxPluginDir) {
 async function getPluginDetails(hxPluginDir, pluginName) {
     var info = {
         "pluginName": pluginName,
+        "displayName": '',
         "data": []
     }
     try {
@@ -87,7 +88,7 @@ async function getPluginDetails(hxPluginDir, pluginName) {
                 };
             };
             if (FileContext.hasOwnProperty('displayName')) {
-                info["pluginName"] = FileContext.displayName;
+                info["displayName"] = FileContext.displayName;
             }
         };
         return info;
@@ -132,8 +133,8 @@ async function getPluginsCommands() {
                             'type': 'plugin_command',
                             'pluginName': p.pluginName
                         };
-                        if (p.pluginName.length < 15) {
-                            commandInfo.label = p.pluginName + ': ' + v['title']
+                        if (p.displayName.length < 15) {
+                            commandInfo.label = p.displayName + ': ' + v['title']
                         };
                         return commandInfo;
                     });
