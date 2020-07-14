@@ -7,18 +7,25 @@ const hx = require('hbuilderx');
 
 const JSONC = require('json-comments');
 
-
+// 扫描目录时排除这些目录
 const excludeOther = ['.DS_Store', 'package-lock.json', 'etc']
 const excludePluginList = [
-    'about', 'format', 'hbuilder.root', 'snippet', 'pm', 'ls','SVN','Git',
-    'css', 'css-language-features', 'html', 'javascript', 'jshint', 'eslint-js', 'eslint-vue',
-    'php', 'node', 'jre', 'npm', 'node_modules', 'nodeserver',
+    'about', 'hbuilder.root', 'snippet', 'pm', 'ls','SVN','Git',
+    'format-prettier','format','formator-stylus-supremacy','formator-prettier',
+    'css', 'css-language-features', 'html', 'javascript',
+    'jshint', 'eslint-js', 'eslint-vue',
+    'node', 'jre', 'npm', 'node_modules', 'nodeserver',
     'qtwebengine', 'hxsimplebrowser', 'cef3', 'qrencode',
     'builtincef3browser','builtincef3terminal',
     'templates', 'akamud.vscode-theme-onedark-2.1.0',
     'theme-default', 'theme-icons-default', 'theme-icons-default-colorful',
     'theme-seti', 'theme-vsode', 'builtinterminal','builtinbrowser' ,'plugin-manager',
-    'weapp-tools', 'uniapp', 'uniapp-cli','uniapp-debugger' ,'launcher', 'command-palette'
+    'weapp-tools', 'uniapp', 'uniapp-cli','uniapp-debugger' ,'launcher',
+    'command-palette',
+    'compile-es6','compile-less','compile-node-sass','compile-pug-cli','compile-stylus',
+    'compile-typescript','compile-coffeescript','typescript','typescript-server',
+    'php', 'php-intellisense','php-cs-fixer',
+    'validate-html','validate-stylelint'
 ];
 
 /**
@@ -28,8 +35,13 @@ const excludePluginList = [
  */
 var fileList = [];
 var walkSync = function(dir, filelist) {
-    files = fs.readdirSync(dir);
     filelist = filelist || [];
+    files = fs.readdirSync(dir);
+    // 过滤文件
+    files = files.filter(item =>
+        !excludePluginList.includes(item) && !excludeOther.includes(item)
+    );
+
     const hxPluginDir = path.join(hx.env.appRoot, 'plugins');
     files.forEach(function(file) {
         let packagePath = path.join(hxPluginDir, file, 'package.json');
@@ -45,10 +57,7 @@ var walkSync = function(dir, filelist) {
  */
 function getLocalInstalledPluginsList(hxPluginDir) {
     return new Promise((resolve, reject) => {
-        let olddata = walkSync(hxPluginDir);
-        let newData = olddata.filter(item =>
-            !excludePluginList.includes(item) && !excludeOther.includes(item)
-        )
+        let newData = walkSync(hxPluginDir);
         if (newData) {
             resolve(newData)
         } else {
@@ -141,8 +150,9 @@ async function getPluginsCommands() {
                 if (err) {
                     console.log('[command-palette] 读取其他插件command命令菜单错误.....',err)
                 }
-            })
+            });  
         }
+        console.log('[command-palette] read end.....');
     });
 }
 
