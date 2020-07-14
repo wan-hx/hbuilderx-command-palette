@@ -1,30 +1,37 @@
 const hx = require('hbuilderx');
-const version = require('./version.json')
+
+var isPopUpWindow = false
 
 /**
  * @description show box
  */
 function showBox(isMajor) {
     let msg = '插件【命令面板】 发布了新版本！快去HBuilderX插件市场更新吧！<br/>';
-    let btn = ['去更新','本周不再提醒'];
+    let btn = ['我要更新','不再提醒', '以后再说'];
     if (isMajor) {
         msg = '插件【命令面板】 重要更新！快去HBuilderX插件市场更新吧！<br/>'
     }
-    hx.window.showInformationMessage(msg,btn).then(result => {
-        if (result === '去更新') {
-            const url = 'https://ext.dcloud.net.cn/plugin?name=command-palette'
-            hx.env.openExternal(url)
-        } else if (result === '本周不再提醒') {
+    hx.window.showInformationMessage(msg, btn).then(result => {
+        if (result === '我要更新') {
+            const url = 'https://ext.dcloud.net.cn/plugin?name=command-palette';
+            hx.env.openExternal(url);
+        } else if (result === '不再提醒') {
             let config = hx.workspace.getConfiguration();
-            config.update("commandPalette.isCheckUpdate", false);
+            config.update("commandPalette.isCheckUpdate", false).then(() => {});
+        } else {
+            hx.commands.executeCommand('extension.commandPalette');
         }
-    })
+    });
+    isPopUpWindow = true;
 };
 
 /**
  * @description check plugin update
  */
 function checkUpdate() {
+    if (isPopUpWindow) {
+        return;
+    }
     // get week
     let week = new Date().getDay();
     // check user config
@@ -34,10 +41,9 @@ function checkUpdate() {
         return;
     };
 
-    let {
-        versionCode,
-        versionUrl
-    } = version;
+    let version = require('./version.js');
+    let versionCode = version.versionCode;
+    let versionUrl = version.versionUrl;
     if (!versionCode || !versionUrl) {
         return;
     };
