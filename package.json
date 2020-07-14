@@ -36,6 +36,11 @@
         "configuration": {
             "title": "命令面板 - command-palette",
             "properties": {
+                "commandPalette.isDisable": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "是否禁用(命令面板)插件"
+                },
                 "commandPalette.isCheckUpdate": {
                     "type": "boolean",
                     "default": true,
@@ -44,7 +49,7 @@
                 "commandPalette.isShowThirdPluginCommand": {
                     "type": "boolean",
                     "default": true,
-                    "description": "是否显示非HBuilderX官方插件(即插件市场插件)外的功能列表"
+                    "description": "是否显示非HBuilderX官方插件外的功能命令菜单"
                 }
             }
         }
