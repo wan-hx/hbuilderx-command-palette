@@ -55,12 +55,16 @@ function checkUpdate() {
             data += chunk;
         });
         res.on("end", () => {
-            let info = JSON.parse(data);
-            if ('version' in info && 'major' in info) {
-                if (versionCode != info.version) {
-                    showBox(info.major);
-                }
-            }
+            try{
+                let info = JSON.parse(data);
+                if ('version' in info && 'major' in info) {
+                    if (versionCode != info.version) {
+                        showBox(info.major);
+                    }
+                };
+            }catch(e){
+                console.error('命令面板: 获取更新文件错误!');
+            };
         });
         res.on("error", (e) => {
             console.log(`错误:${e.message}`)
