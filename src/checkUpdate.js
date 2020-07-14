@@ -6,10 +6,10 @@ var isPopUpWindow = false
  * @description show box
  */
 function showBox(isMajor) {
-    let msg = '插件【命令面板】 发布了新版本！快去HBuilderX插件市场更新吧！<br/>';
-    let btn = ['我要更新','不再提醒', '以后再说'];
+    let msg = '插件【命令面板】 发布了新版本！快去HBuilderX插件市场更新吧！\n';
+    let btn = ['我要更新', '不再提醒', '以后再说'];
     if (isMajor) {
-        msg = '插件【命令面板】 重要更新！快去HBuilderX插件市场更新吧！<br/>'
+        msg = '插件【命令面板】 重要更新！快去HBuilderX插件市场更新吧！\n'
     }
     hx.window.showInformationMessage(msg, btn).then(result => {
         if (result === '我要更新') {
@@ -23,6 +23,21 @@ function showBox(isMajor) {
         }
     });
     isPopUpWindow = true;
+};
+
+function isJSON(str) {
+    if (typeof str == 'string') {
+        try {
+            var obj = JSON.parse(str);
+            if (typeof obj == 'object' && obj) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (e) {
+            return false;
+        }
+    }
 };
 
 /**
@@ -55,19 +70,19 @@ function checkUpdate() {
             data += chunk;
         });
         res.on("end", () => {
-            try{
+            if (isJSON(data)) {
                 let info = JSON.parse(data);
                 if ('version' in info && 'major' in info) {
                     if (versionCode != info.version) {
                         showBox(info.major);
-                    }
+                    };
                 };
-            }catch(e){
-                console.error('命令面板: 获取更新文件错误!');
+            } else {
+                console.log('命令面板: 更新文件无效，不是有效json.');
             };
         });
         res.on("error", (e) => {
-            console.log(`错误:${e.message}`)
+            console.error('命令面板: 获取更新文件错误!', e);
         });
     });
 };
