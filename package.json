@@ -39,17 +39,17 @@
                 "commandPalette.isDisable": {
                     "type": "boolean",
                     "default": false,
-                    "description": "是否禁用(命令面板)插件"
+                    "description": "禁用(命令面板)插件"
                 },
                 "commandPalette.isCheckUpdate": {
                     "type": "boolean",
                     "default": true,
-                    "description": "是否检查更新"
+                    "description": "检查更新"
                 },
                 "commandPalette.isShowThirdPluginCommand": {
                     "type": "boolean",
                     "default": true,
-                    "description": "是否显示非HBuilderX官方插件外的功能命令菜单"
+                    "description": "显示非HBuilderX官方插件外的功能命令菜单"
                 }
             }
         }
