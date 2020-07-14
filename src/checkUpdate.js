@@ -9,6 +9,9 @@ function showBox(isMajor) {
     let msg = '插件【命令面板】 发布了新版本！快去HBuilderX插件市场更新吧！\n';
     let btn = ['我要更新', '不再提醒', '以后再说'];
     if (isMajor) {
+        btn = ['我要更新']
+    }
+    if (isMajor) {
         msg = '插件【命令面板】 重要更新！快去HBuilderX插件市场更新吧！\n'
     }
     hx.window.showInformationMessage(msg, btn).then(result => {
@@ -83,6 +86,7 @@ function checkUpdate() {
         });
         res.on("error", (e) => {
             console.error('命令面板: 获取更新文件错误!', e);
+            isPopUpWindow = true;
         });
     });
 };
