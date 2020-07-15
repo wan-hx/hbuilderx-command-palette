@@ -35,22 +35,24 @@ function sourceControl(type, cmd, parm) {
     }
 
     // 执行命令
-    let run_cmd = '';
-    if (isActiveState.isFile()) {
-        if (cmd.includes('log')  && isActiveState.isFile()) {
-            let basename = path.basename(fsPath)
-            run_cmd = "cd " + currentDir + " && " + cmd + ' ' + basename;
-        } else {
-            run_cmd = "cd " + currentDir + " && " + cmd;
-        }
-    }
-    if (isActiveState.isDirectory()) {
+    let run_cmd = "cd " + currentDir + " && " + cmd;;
+    let basename = path.basename(fsPath);
+    if (cmd.includes('git log') && isActiveState.isFile()) {
+        run_cmd = "cd " + currentDir + " && " + cmd + ' ' + basename;
+    } else if (cmd.includes('git checkout --') && isActiveState.isFile()) {
+        run_cmd = "cd " + currentDir + " && " + cmd + ' ' + basename;
+    } else if (cmd.includes('git add')) {
+        run_cmd = "cd " + currentDir + " && " + cmd + ' ' + fsPath;
+    } else {
         run_cmd = "cd " + currentDir + " && " + cmd;
-    }
+    };
 
     if (run_cmd) {
         console.log(run_cmd);
         exec(run_cmd, function(error, stdout, stderr) {
+            if (!error) {
+                hx.window.setStatusBarMessage('操作成功',3000,'info');
+            };
             common.createOutputChannel(type,[stdout,stderr]);
         });
     };

@@ -1257,7 +1257,7 @@ const actions = [{
     "type": "standard_create",
     "info": ".editorconfig"
 }, {
-    "label": "创建.gitignore",
+    "label": "Git: 创建.gitignore",
     "description": "action: create .gitignore",
     "type": "standard_create",
     "info": ".gitignore"
@@ -1314,41 +1314,41 @@ const actions = [{
 }]
 
 const svn_git = [{
-	"label": "SVN插件: 查看日志",
-	"description": "svn log",
-	"type": "hx_command",
-	"command": "file.showlog"
+    "label": "SVN插件: 查看日志",
+    "description": "svn log",
+    "type": "hx_command",
+    "command": "file.showlog"
 }, {
-	"label": "SVN插件: 提交",
-	"description": "svn ci -m ''",
-	"type": "hx_command",
-	"command": "files.commit"
+    "label": "SVN插件: 提交",
+    "description": "svn ci -m ''",
+    "type": "hx_command",
+    "command": "files.commit"
 }, {
-	"label": "SVN插件: 比较差异, 与最近一次提交比较",
-	"description": "svn diff",
-	"type": "hx_command",
-	"command": "file.compareWithLastVersion"
+    "label": "SVN插件: 比较差异, 与最近一次提交比较",
+    "description": "svn diff",
+    "type": "hx_command",
+    "command": "file.compareWithLastVersion"
 }, {
-	"label": "Git插件: 查看日志",
-	"description": "git log",
-	"type": "hx_command",
-	"command": "file.showlog"
+    "label": "Git插件: 查看日志",
+    "description": "git log",
+    "type": "hx_command",
+    "command": "file.showlog"
 }, {
-	"label": "Git插件: 提交",
-	"description": "git commit",
-	"type": "hx_command",
-	"command": "files.commit"
+    "label": "Git插件: commit提交",
+    "description": "git commit",
+    "type": "hx_command",
+    "command": "files.commit"
 }, {
-	"label": "Git插件: 比较差异, 与最近一次提交比较",
-	"description": "git diff",
-	"type": "hx_command",
-	"command": "file.compareWithLastVersion"
+    "label": "Git插件: 比较差异, 与最近一次提交比较",
+    "description": "git diff",
+    "type": "hx_command",
+    "command": "file.compareWithLastVersion"
 }, {
     "label": "svn命令: svn update",
     "description": "svn update",
     "type": "svn",
     "cmd": "svn update"
-},{
+}, {
     "label": "svn命令: svn log",
     "description": "svn log",
     "type": "svn",
@@ -1358,6 +1358,11 @@ const svn_git = [{
     "description": "svn cleanup -Rf .",
     "type": "svn",
     "cmd": "svn clean -Rf ."
+},{
+    "label": "Git命令: git add",
+    "description": "git add",
+    "type": "git",
+    "cmd": "git add"
 }, {
     "label": "Git命令: git pull",
     "description": "git pull",
@@ -1398,6 +1403,11 @@ const svn_git = [{
     "description": "git tag",
     "type": "git",
     "cmd": 'git tag'
+}, {
+    "label": "Git命令: 还原文件",
+    "description": "git checkout -- <filename>",
+    "type": "git",
+    "cmd": 'git checkout -- '
 }]
 
 module.exports = {
