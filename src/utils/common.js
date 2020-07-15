@@ -35,11 +35,6 @@ function getPath(parm) {
  * @description 创建输出控制台
  */
 function createOutputChannel(channel_name, info) {
-    let tmp = info.filter( v => v);
-    if (tmp.length == 0) {
-        return;
-    };
-
     // 创建控制台
     let outputChannel = hx.window.createOutputChannel(channel_name);
     // 显示控制台
