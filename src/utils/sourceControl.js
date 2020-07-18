@@ -48,7 +48,8 @@ function sourceControl(type, cmd, parm) {
     };
 
     if (run_cmd) {
-        console.log(run_cmd);
+        let msg = '执行:' + run_cmd + '\n';
+        common.createOutputChannel(type,msg);
         exec(run_cmd, function(error, stdout, stderr) {
             if (!error) {
                 hx.window.setStatusBarMessage('操作成功',3000,'info');

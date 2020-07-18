@@ -1384,7 +1384,7 @@ const svn_git = [{
     "type": "git",
     "cmd": 'git log -n 10 --graph --pretty=format:"%Cblue%ci - %Cred%h - %C(yellow)%ae%Creset(%an) %Cgreen%s (%Cred%ar)"'
 }, {
-    "label": "Git命令: 查看配置信息",
+    "label": "Git命令: git config 查看配置",
     "description": "git config --list",
     "type": "git",
     "cmd": 'git config --list'
@@ -1394,12 +1394,12 @@ const svn_git = [{
     "type": "git",
     "cmd": 'git branch -a -vv'
 }, {
-    "label": "Git命令: 推送",
-    "description": "git push",
+    "label": "Git命令: git push 推送",
+    "description": "git push origin",
     "type": "git",
     "cmd": 'git push'
 }, {
-    "label": "Git命令: 列出tag",
+    "label": "Git命令: git tag",
     "description": "git tag",
     "type": "git",
     "cmd": 'git tag'
