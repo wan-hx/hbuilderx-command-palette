@@ -36,10 +36,12 @@ function clipboardRead() {
  */
 async function codec(type) {
     let content = await clipboardRead();
+    common.createOutputChannel('原文',content);
+    
     switch (type) {
         case 'UrlDecode':
             const result = await decodeURIComponent(content);
-            common.createOutputChannel('解码', result);
+            common.createOutputChannel('解码', unescape(result.replace(/\\/g, "%")));
             break;
         case 'UrlEncode':
             const encodeResult = await encodeURIComponent(content);

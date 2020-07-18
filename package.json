@@ -15,15 +15,12 @@
         "onCommand:extension.commandPalette"
     ],
     "contributes": {
-        "commands": [
-            {
-                "command": "extension.commandPalette",
-                "title": "命令面板"
-            }
-        ],
+        "commands": [{
+            "command": "extension.commandPalette",
+            "title": "命令面板"
+        }],
         "menus": {
-            "menubar/tool": [
-                {
+            "menubar/tool": [{
                     "group": "z_commands"
                 },
                 {
@@ -36,20 +33,29 @@
         "configuration": {
             "title": "命令面板 - command-palette",
             "properties": {
-                "commandPalette.isDisable": {
+                "commandPalette.runInTerminal": {
+                    "type": "string",
+                    "default": "外部终端",
+                    "description": "执行系统命令、或运行程序/脚本，使用的终端类型，默认：外部终端",
+                    "enum": [
+                        "外部终端",
+                        "内置终端"
+                    ]
+                },
+                "commandPalette.isShowThirdPluginCommand": {
                     "type": "boolean",
-                    "default": false,
-                    "description": "禁用(命令面板)插件"
+                    "default": true,
+                    "description": "显示非HBuilderX官方插件外的功能命令菜单"
                 },
                 "commandPalette.isCheckUpdate": {
                     "type": "boolean",
                     "default": true,
                     "description": "检查更新"
                 },
-                "commandPalette.isShowThirdPluginCommand": {
+                "commandPalette.isDisable": {
                     "type": "boolean",
-                    "default": true,
-                    "description": "显示非HBuilderX官方插件外的功能命令菜单"
+                    "default": false,
+                    "description": "禁用(命令面板)插件"
                 }
             }
         }
