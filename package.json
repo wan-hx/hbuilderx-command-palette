@@ -2,7 +2,7 @@
     "name": "command-palette",
     "description": "命令面板, 类似vscode的命令面板, 快捷调用HBuilderX命令菜单、第三方插件命令菜单等",
     "displayName": "命令面板",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "OneOne",
     "engines": {
         "HBuilderX": "^2.7.0"
@@ -12,23 +12,41 @@
     ],
     "main": "./extension",
     "activationEvents": [
-        "onCommand:extension.commandPalette"
+        "onCommand:extension.commandPalette",
+        "onCommand:extension.runCodeInTerminal"
     ],
     "contributes": {
         "commands": [{
             "command": "extension.commandPalette",
             "title": "命令面板"
+        }, {
+            "command": "extension.runCodeInTerminal",
+            "title": "run code"
         }],
         "menus": {
             "menubar/tool": [{
-                    "group": "z_commands"
-                },
-                {
-                    "command": "extension.commandPalette",
-                    "title": "命令面板",
-                    "group": "z_commands"
-                }
-            ]
+                "group": "z_commands"
+            }, {
+                "command": "extension.commandPalette",
+                "title": "命令面板",
+                "group": "z_commands"
+            }],
+            "explorer/context": [{
+                "command": "extension.runCodeInTerminal",
+                "title": "run code",
+                "group": "z_commands",
+                "when": "!explorerResourceIsFolder"
+            },{
+                "group": "z_commands"
+            }],
+            "editor/context": [{
+                "command": "extension.runCodeInTerminal",
+                "title": "run code",
+                "group": "copy",
+                "when": "langId == 'bash' || langId == 'c' || langId == 'cpp' || langId == 'java' || langId == 'javascript' || langId == 'python' || langId == 'powershell' || langId == 'ruby' || langId == 'perl' || langId == 'php' || langId == 'go'"
+            },{
+                "group": "copy"
+            }]
         },
         "configuration": {
             "title": "命令面板 - command-palette",

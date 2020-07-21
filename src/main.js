@@ -37,8 +37,7 @@ async function main(parm) {
         picklistdata = [...picklistdata,...allThirdPluginsCommands]
     }catch(e){
         console.log(e);
-    }
-
+    };
 
     hx.window.showQuickPick(picklistdata, {
         placeHolder: '请选择要操作的菜单或命令',
