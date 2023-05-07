@@ -1,0 +1,1457 @@
+[
+    {
+        "label": "工具: 自定义快捷键 tool: set key",
+        "description": "",
+        "command": "workbench.action.openGlobalKeybindings",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "工具: 插件安装 tool: plugin install",
+        "description": "",
+        "command": "update.openPluginDialog",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "工具: 去插件市场安装插件 tool: plugin market install",
+        "description": "",
+        "type": "url",
+        "info": "https://ext.dcloud.net.cn/?cat1=1&cat2=11"
+    },
+    {
+        "label": "帮助: 查看更新日志 help: hbuilderx release",
+        "description": "",
+        "command": "update.showCurrentReleaseNotes",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "帮助: 查看运行日志 help: open run log",
+        "description": "",
+        "command": "workbench.action.openlog",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "帮助: 检查更新 help: check update",
+        "description": "",
+        "command": "update.checkForUpdate",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文件: 重命名文件 file: rename file",
+        "description": "",
+        "command": "renameFile",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文件: 剪切文件 file: cut file",
+        "description": "",
+        "command": "filesExplorer.cut",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文件: 复制文件 file: copy file",
+        "description": "",
+        "command": "filesExplorer.copy",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文件: 粘贴文件 file: paste file",
+        "description": "",
+        "command": "filesExplorer.paste",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：新建标签卡 file: new",
+        "description": "",
+        "command": "workbench.action.files.newUntitledFile",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：关闭当前标签卡 file: close tab",
+        "description": "",
+        "command": "workbench.action.closeActiveEditor",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：关闭所有标签卡 file: close all tab",
+        "description": "",
+        "command": "workbench.action.closeAllEditors",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：显示左边的标签卡 file: left tab",
+        "description": "",
+        "command": "workbench.action.leftTab",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：显示右边的标签卡 file: right tab",
+        "description": "",
+        "command": "workbench.action.rightTab",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：重开已关闭标签卡 file: reopen tab",
+        "description": "",
+        "command": "workbench.action.reopenClosedEditor",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：切换到第1个标签卡 file: tab 1",
+        "description": "",
+        "command": "workbench.action.openEditorAtIndex1",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：切换到第2个标签卡 file: tab 2",
+        "description": "",
+        "command": "workbench.action.openEditorAtIndex2",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：切换到第3个标签卡 file: tab 3",
+        "description": "",
+        "command": "workbench.action.openEditorAtIndex3",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：切换到第4个标签卡 file: tab 4",
+        "description": "",
+        "command": "workbench.action.openEditorAtIndex4",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：切换到第5个标签卡 file: tab 5",
+        "description": "",
+        "command": "workbench.action.openEditorAtIndex5",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：切换到第6个标签卡 file: tab 6",
+        "description": "",
+        "command": "workbench.action.openEditorAtIndex6",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：切换到第7个标签卡 file: tab 7",
+        "description": "",
+        "command": "workbench.action.openEditorAtIndex7",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：切换到第8个标签卡 file: tab 8",
+        "description": "",
+        "command": "workbench.action.openEditorAtIndex8",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：切换到第9个标签卡 file: tab 9",
+        "description": "",
+        "command": "workbench.action.openEditorAtIndex9",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：切换到最末尾的标签卡 file: tab 0",
+        "description": "",
+        "command": "workbench.action.openEditorAtIndex0",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：往左移动一个标签卡 file: move left tab",
+        "description": "",
+        "command": "workbench.action.moveEditorLeftInGroup",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "标签卡：往右移动一个标签卡 file: move right tab",
+        "description": "",
+        "command": "workbench.action.moveEditorRightInGroup",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文件: 新建 file: new",
+        "description": "",
+        "command": "workbench.action.menu.new",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文件: 打开外部文件 file: open",
+        "description": "",
+        "command": "workbench.action.files.openFile",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文件: 打开收藏菜单 file: fav",
+        "description": "",
+        "command": "workbench.action.fav.menu",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文件: 保存 file: save",
+        "description": "",
+        "command": "workbench.action.files.save",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文件: 另存为 file: saveAs",
+        "description": "",
+        "command": "workbench.action.files.saveAs",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文件: 全部保存 file: saveAll",
+        "description": "",
+        "command": "workbench.action.files.saveAll",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文件: 打开文件夹导入项目 file: open folder",
+        "description": "",
+        "command": "workbench.action.files.openFolder",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文件: 在命令行打开文件所在目录 file: terminal",
+        "description": "",
+        "command": "revealFileInTerminal",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文件: 打开文件所在目录 file: file in OS",
+        "description": "",
+        "command": "revealFileInOS",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "行: 向下插入行 eidt: insert",
+        "description": "",
+        "command": "editor.action.insertLineAfter",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "行: 向上插入行 eidt: insert line",
+        "description": "",
+        "command": "editor.action.insertLineBefore",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "行: 反回车，即把光标前内容移到下一行 eidt: move",
+        "description": "",
+        "command": "editor.action.shiftEnter",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "行: 上移一行 eidt: move",
+        "description": "",
+        "command": "editor.action.moveLinesUpAction",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "行: 下移一行 eidt: move",
+        "description": "",
+        "command": "editor.action.moveLinesDownAction",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "删除: 向左删除 eidt: delete",
+        "description": "",
+        "command": "deleteLeft",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "删除: 向右删除 eidt: delete",
+        "description": "",
+        "command": "deleteRight",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "删除: 向左删除词 eidt: delete",
+        "description": "",
+        "command": "deleteWordLeft",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "删除: 向右删除词 eidt: delete",
+        "description": "",
+        "command": "deleteWordRight",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "删除: 向左删除驼峰词 eidt: delete",
+        "description": "",
+        "command": "deleteWordPartLeft",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "删除: 向右删除驼峰词 eidt: delete",
+        "description": "",
+        "command": "deleteWordPartRight",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "删除: 删到行首 eidt: delete",
+        "description": "",
+        "command": "deleteLineLeft",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "删除: 删到行尾 eidt: delete",
+        "description": "",
+        "command": "deleteLineRight",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "删除: 删除行 eidt: delete lines",
+        "description": "",
+        "command": "editor.action.deleteLines",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "插入: -无序列表符 eidt:",
+        "description": "",
+        "command": "editor.action.unOrderListSymbolsByMinus",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "插入: *无序列表符 eidt:",
+        "description": "",
+        "command": "editor.action.unOrderListSymbolsByMultiply",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "插入: +无序列表符 eidt:",
+        "description": "",
+        "command": "editor.action.unOrderListSymbolsByPlus",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "插入: >引用列表符 eidt:",
+        "description": "",
+        "command": "editor.action.quoteListSymbols",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "插入: 有序列表符 eidt:",
+        "description": "",
+        "command": "editor.action.orderListSymbols",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "插入: 任务列表符 eidt:",
+        "description": "",
+        "command": "editor.action.taskListSymbols",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "插入: 已完成任务列表符 eidt:",
+        "description": "",
+        "command": "editor.action.taskFinishListSymbols",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "复制 eidt: copy",
+        "description": "",
+        "command": "editor.action.clipboardCopyAction",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "复制文件路径 eidt: copy path",
+        "description": "",
+        "command": "editor.action.clipboardCopyPathAction",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "重复插入选区或当前行 eidt:",
+        "description": "",
+        "command": "editor.action.duplicate",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "剪切 eidt: cut",
+        "description": "",
+        "command": "editor.action.clipboardCutAction",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "粘贴 eidt: paste",
+        "description": "",
+        "command": "editor.action.clipboardPasteAction",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "粘贴为HTML eidt: paste html",
+        "description": "",
+        "command": "editor.action.clipboardPasteAsHTML",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "从历史粘贴板粘贴 eidt: paste history",
+        "description": "",
+        "command": "editor.action.clipboardPasteFromHistory",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "交换字符、选区或行 eidt: swich selection",
+        "description": "",
+        "command": "editor.action.swichSelectionOrLine",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "撤销: 撤销 eidt: undo",
+        "description": "",
+        "command": "undo",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "撤销: 重做 eidt: redo",
+        "description": "",
+        "command": "redo",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "撤销: 撤销一个新光标或选区 eidt: undo selection",
+        "description": "",
+        "command": "editor.action.undoSelection",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "格式化 eidt: format",
+        "description": "",
+        "command": "editor.action.format",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "合并行 eidt: join line",
+        "description": "",
+        "command": "editor.action.joinLines",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "注释: 注释/反注释 eidt: comment line",
+        "description": "",
+        "command": "editor.action.commentLine",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "注释: 块注释 eidt: block comment",
+        "description": "",
+        "command": "editor.action.blockCommentLine",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "注释: 注释菜单(含条件编译注释) eidt: comment",
+        "description": "",
+        "command": "editor.action.showCommentMenu",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "包围 eidt:",
+        "description": "",
+        "command": "editor.action.SurroundBylanguage",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "反包围 eidt:",
+        "description": "",
+        "command": "editor.action.UnSurroundBylanguage",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "加粗（md生效） eidt: bold",
+        "description": "",
+        "command": "editor.action.bold",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "大小写: 全部字母大写 eidt: uppercase",
+        "description": "",
+        "command": "editor.action.transformToUppercase",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "大小写: 全部字母小写 eidt: lowercase",
+        "description": "",
+        "command": "editor.action.transformToLowercase",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "大小写: 首字母大写 eidt: uppercase",
+        "description": "",
+        "command": "editor.action.transformToTitlecase",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "激活代码助手 eidt: code suggest",
+        "description": "",
+        "command": "editor.action.triggerSuggest",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "激活方法参数提示 eidt: parameter hints",
+        "description": "",
+        "command": "Trigger Parameter Hints",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "缩进 eidt: tab",
+        "description": "",
+        "command": "tab",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "反缩进 eidt: outdent",
+        "description": "",
+        "command": "outdent",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 全选 select: select all",
+        "description": "",
+        "command": "editor.action.selectAll",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 向左选字 select: left select",
+        "description": "",
+        "command": "cursorLeftSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 向右选字 select: right select",
+        "description": "",
+        "command": "cursorRightSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 向上选行 select: up select",
+        "description": "",
+        "command": "cursorUpSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 向下选行 select: down select",
+        "description": "",
+        "command": "cursorDownSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 向左选词 select: word left select",
+        "description": "",
+        "command": "cursorWordStartLeftSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 向右选词 select: word right select",
+        "description": "",
+        "command": "cursorWordEndRightSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 向左选一个驼峰单词 select: word select",
+        "description": "",
+        "command": "cursorWordPartLeftSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 向右选一个驼峰单词 select: word select",
+        "description": "",
+        "command": "cursorWordPartRightSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选至软行首 select: home select",
+        "description": "",
+        "command": "cursorHomeSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选至软行尾 select: end select",
+        "description": "",
+        "command": "cursorEndSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选至行首 select: home select",
+        "description": "",
+        "command": "cursorHomeDirectSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选至行尾 select: end select",
+        "description": "",
+        "command": "cursorEndDirectSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选至段落开头 select: line start",
+        "description": "",
+        "command": "cursorLineStartSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选至段落结尾 select: line end",
+        "description": "",
+        "command": "cursorLineEndSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选至上一页 select: page up",
+        "description": "",
+        "command": "cursorPageUpSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选至下一页 select: page down",
+        "description": "",
+        "command": "cursorPageDownSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选至文档首 select: top",
+        "description": "",
+        "command": "cursorTopSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选至文档尾 select: bottom",
+        "description": "",
+        "command": "cursorBottomSelect",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选择当前词或下一个相同词 select: next find match",
+        "description": "",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选择所有相同词 select: all same word",
+        "description": "",
+        "command": "editor.action.selectAllSameWord",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 跳过当前选择，选中下一个相同词 select: editor skip select",
+        "description": "",
+        "command": "editor.action.skipSelectionAndSelectNext",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选择相同语法词 select: editor select",
+        "description": "",
+        "command": "editor.action.SelectSameWordByLan",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选择括号内字符。可用双击括号替代 select: match bracket",
+        "description": "",
+        "command": "editor.action.selectMatchBracket",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选择行。可用单击行号替代 select: line selection",
+        "description": "",
+        "command": "expandLineSelection",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 选择行(不含首尾空白字符) select: select line no blank str",
+        "description": "",
+        "command": "editor.action.selectLineNoBlankStr",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 放大选区 select: expand selection",
+        "description": "",
+        "command": "editor.action.expandSelection",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 向2侧扩大选择 select: expand selection two sides",
+        "description": "",
+        "command": "editor.action.expandSelectionTwoSides",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 由2侧向内减少选择 select: narrow selection two sides",
+        "description": "",
+        "command": "editor.action.narrowSelectionTwoSides",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 向上列选择 select: insert above",
+        "description": "",
+        "command": "editor.action.insertCursorAbove",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 向下列选择 select: insert below",
+        "description": "",
+        "command": "editor.action.insertCursorBelow",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 每个选区前后设置光标 select: set cursor surround",
+        "description": "",
+        "command": "editor.action.setCursorSurroundSel",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "选择: 每行行首设置光标 select: set cursor each line",
+        "description": "",
+        "command": "editor.action.setCursorEachLine",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "查找: 查找文件 find:find file",
+        "description": "",
+        "command": "workbench.action.quickOpen",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "查找: 查找索引符号 find: quick find",
+        "description": "",
+        "command": "actions.quickFind",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "查找: 本文档内查找字符串 find: find string",
+        "description": "",
+        "command": "actions.find",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "查找: 目录搜索字符串 find: find file",
+        "description": "",
+        "command": "workbench.action.findInFiles",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "查找: 替换 find: find replace",
+        "description": "",
+        "command": "editor.action.startFindReplaceAction",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "查找: 查找下一个字符串 find: find next string",
+        "description": "",
+        "command": "editor.action.nextSelectionMatchFindAction",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "查找: 查找上一个字符串 find: find previous string",
+        "description": "",
+        "command": "editor.action.previousSelectionMatchFindAction",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "跳转: 光标向左 goto: cursor left",
+        "description": "",
+        "command": "cursorLeft",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "跳转: 光标向下 goto: cursor down",
+        "description": "",
+        "command": "cursorDown",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "跳转: 光标向上 goto: cursor up",
+        "description": "",
+        "command": "cursorUp",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "跳转: 光标向右 goto: cursor right",
+        "description": "",
+        "command": "cursorRight",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "跳转: 光标向左一词 goto: cursor word start left",
+        "description": "",
+        "command": "cursorWordStartLeft",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "跳转: 光标向右一词 goto: cursor word end right",
+        "description": "",
+        "command": "cursorWordEndRight",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "跳转: 光标向左一个驼峰单词 goto: cursor word part left",
+        "description": "",
+        "command": "cursorWordPartLeft",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "跳转: 光标向右一个驼峰单词 goto: cursor word part right",
+        "description": "",
+        "command": "cursorWordPartRight",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "跳转: 光标到软行首 goto: cursor home",
+        "description": "",
+        "command": "cursorHome",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "跳转: 光标到软行尾 goto: cursor end",
+        "description": "",
+        "command": "cursorEnd",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "跳转: 光标到行首 goto: cursor line start",
+        "description": "",
+        "command": "cursorLineStart",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "跳转: 光标到行尾 goto: cursor line end",
+        "description": "",
+        "command": "cursorLineEnd",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "光标到上个段落 goto: cursor para up",
+        "description": "",
+        "command": "cursorParaUp",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "光标到下个段落 goto: cursor para down",
+        "description": "",
+        "command": "cursorParaDown",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "光标到上一页 goto: cursor page up",
+        "description": "",
+        "command": "cursorPageUp",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "光标到下一页 goto: cursor page down",
+        "description": "",
+        "command": "cursorPageDown",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "光标到页首 goto: cursor top",
+        "description": "",
+        "command": "cursorTop",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "光标到页尾 goto: cursor bottom",
+        "description": "",
+        "command": "cursorBottom",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "转到定义 goto: definition",
+        "description": "",
+        "command": "workbench.action.gotoDefinition",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "分栏转到定义 goto: definition",
+        "description": "",
+        "command": "workbench.action.gotoDefinitionWithPane",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "跳转到行 goto: line",
+        "description": "",
+        "command": "workbench.action.gotoLine",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "跳转到配对的括号 goto: jump to bracket",
+        "description": "",
+        "command": "editor.action.jumpToBracket",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "光标后退 goto: navigate back",
+        "description": "",
+        "command": "workbench.action.navigateBack",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "光标前进 goto: navigate forward",
+        "description": "",
+        "command": "workbench.action.navigateForward",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "设置/取消书签 goto: toggle bookmark",
+        "description": "",
+        "command": "workbench.action.toggleBookmark",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "下一个书签 goto: next bookmark",
+        "description": "",
+        "command": "workbench.action.nextBookmark",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "上一个书签 goto: prev bookmark",
+        "description": "",
+        "command": "workbench.action.prevBookmark",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "清除所有书签 goto: clear bookmark",
+        "description": "",
+        "command": "workbench.action.clearBookmarks",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "下一个验证错误 next error",
+        "description": "",
+        "command": "workbench.action.nextError",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "上一个验证错误 prev error",
+        "description": "",
+        "command": "workbench.action.prevError",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "折叠: 折叠单行 goto: fold line",
+        "description": "",
+        "command": "workbench.action.foldLineContract",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "折叠: 展开单行 goto: fold line expand",
+        "description": "",
+        "command": "workbench.action.foldLineExpand",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "折叠: 折叠子行 goto: fold children line",
+        "description": "",
+        "command": "workbench.action.foldChildrenContract",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "折叠: 展开子行 goto: fold children expand",
+        "description": "",
+        "command": "workbench.action.foldChildrenExpand",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "折叠: 折叠所有行 goto: fold all",
+        "description": "",
+        "command": "workbench.action.foldAllContract",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "折叠: 展开所有行 goto: fold all expand",
+        "description": "",
+        "command": "workbench.action.foldAllExpand",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "折叠: 折叠其他区域 goto: fold other",
+        "description": "",
+        "command": "workbench.action.foldContractOther",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 置焦到编辑器区域 view: focus editor",
+        "description": "",
+        "command": "workbench.action.focusEditor",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 置焦到项目管理器 view: explorer",
+        "description": "",
+        "command": "workbench.view.explorer",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 显示/隐藏项目管理器 view: siderbar",
+        "description": "",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 显示/隐藏控制台 view: repl",
+        "description": "",
+        "command": "workbench.debug.action.toggleRepl",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 显示/隐藏终端 view: terminal",
+        "description": "",
+        "command": "workbench.action.tiggleTerminal",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 显示/隐藏工具栏 view: toolbar",
+        "description": "",
+        "command": "workbench.action.toggleToolbarVisibility",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 显示/隐藏内置浏览器 view: browser",
+        "description": "",
+        "command": "workbench.action.togglePreviewBrowserVisibility",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 显示/隐藏迷你地图 view: mini map",
+        "description": "",
+        "command": "editor.action.toggleMinimap",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 显示/隐藏大纲 view: outline",
+        "description": "",
+        "command": "editor.action.triggerOutline",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 增大字体 view: zoom in",
+        "description": "",
+        "command": "workbench.action.zoomIn",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 减小字体 view: zoom out",
+        "description": "",
+        "command": "workbench.action.zoomOut",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 免打扰模式 view: freemode",
+        "description": "",
+        "command": "workbench.action.distanceFreeMode",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 单栏 view: pane split 1",
+        "description": "",
+        "command": "workbench.action.split1e",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 左右2栏 view: pane split 2",
+        "description": "",
+        "command": "workbench.action.split2e",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 左右3栏 view: pane split 3",
+        "description": "",
+        "command": "workbench.action.split3e",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 置焦到下一个分栏 view: next pane split",
+        "description": "",
+        "command": "workbench.action.nextpane",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 置焦到上一个分栏 view: prev pane split",
+        "description": "",
+        "command": "workbench.action.prevpane",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 新建HBuilder窗体 view: new window",
+        "description": "",
+        "command": "workbench.action.newWindow",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 最小化 view: window minimize",
+        "description": "",
+        "command": "workbench.action.minimize",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 多窗口切换 view: window switch",
+        "description": "",
+        "command": "workbench.action.switchWindow",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图:切换是否自动换行 view: toggle word wrap",
+        "description": "",
+        "command": "editor.action.toggleWordWrap",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "视图: 显示/隐藏空白字符 view: whitespace",
+        "description": "",
+        "command": "editor.action.toggleRenderWhitespace",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "运行 run: run",
+        "description": "",
+        "command": "app.action.rundevice",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "重新运行 run: debug restart",
+        "description": "",
+        "command": "workbench.action.debug.restart",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "停止运行 run: debug stop",
+        "description": "",
+        "command": "workbench.action.debug.stop",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: 快捷发行菜单 publish: menus",
+        "description": "",
+        "command": "workbench.action.showPubMenu",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: 原生App云打包 publish: app",
+        "description": "",
+        "command": "project.action.app.pack",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: 原生App - 查看云打包状态 publish: app status",
+        "description": "",
+        "command": "project.action.app.status",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: 原生App - 制作应用wgt包 publish: app wgt",
+        "description": "",
+        "command": "project.action.app.export.wgt.app",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: 原生App - 本地打包 - 生成本地打包App资源 publish: app",
+        "description": "",
+        "command": "project.action.app.export.app",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: uni-app 生成H5网站 publish: uni-app h5",
+        "description": "",
+        "command": "project.action.app.publish.html5",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: uni-app 发布到微信小程序 publish: uni-app weixin",
+        "description": "",
+        "command": "project.action.app.publish.weapp",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: uni-app 发布到百度小程序 publish: uni-app baidu",
+        "description": "",
+        "command": "project.action.app.publish.baiduapp",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: uni-app 发布到支付宝小程序 publish: uni-app alipay",
+        "description": "",
+        "command": "project.action.app.publish.alipayapp",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: uni-app 发布到字节跳动小程序 publish: uni-app byte",
+        "description": "",
+        "command": "project.action.app.publish.bytedanceapp",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: uni-app 发布到QQ小程序 publish: uni-app qq",
+        "description": "",
+        "command": "project.action.app.publish.qqapp",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: uni-app 发布到360小程序 publish: uni-app 360",
+        "description": "",
+        "command": "project.action.app.publish.360app",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: uni-app 快应用 - 华为 publish: uni-app quick huawei",
+        "description": "",
+        "command": "project.action.app.publish.huaweiapp",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: uni-app 快应用 - 联盟 publish: uni-app quick",
+        "description": "",
+        "command": "project.action.app.publish.quickappunion",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "发行: 上传网站到服务器 publish: uni-app ",
+        "description": "",
+        "command": "project.action.app.publish.statichosting",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文件: 本地历史记录 file: file local history",
+        "description": "",
+        "command": "workbench.action.files.localHistory",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "网站：开发者云端控制台 help: open user center",
+        "description": "",
+        "command": "workbench.action.openusercenter",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文档：HBuilderX入门教程 help: open tutorial",
+        "description": "",
+        "command": "workbench.action.openTutorial",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "文档：Markdown语法帮助 help: markdown",
+        "description": "",
+        "command": "workbench.action.openmarkdownhelp",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "关于 help: about",
+        "description": "",
+        "command": "app.action.quit",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "验证本文档语法 tool: validation",
+        "description": "",
+        "command": "editor.action.validation",
+        "type": "hx_command",
+        "key": ""
+    },
+    {
+        "label": "设置: 打开设置 tool: set",
+        "description": "",
+        "command": "workbench.action.openGlobalSettings",
+        "type": "hx_command",
+        "key": ""
+    }
+]

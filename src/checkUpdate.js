@@ -59,29 +59,23 @@ function checkUpdate() {
         return;
     };
 
-    let version = require('./version.js');
-    let versionCode = version.versionCode;
-    let versionUrl = version.versionUrl;
-    if (!versionCode || !versionUrl) {
-        return;
-    };
+    let currentVersion = require('../package.json');
 
     let http = require('http');
-    http.get(versionUrl, (res) => {
+    http.get("http://update.liuyingyong.cn/hbuilderx/marketplace/plugin.json", (res) => {
         let data = "";
         res.on("data", (chunk) => {
             data += chunk;
         });
         res.on("end", () => {
             if (isJSON(data)) {
-                let info = JSON.parse(data);
-                if ('version' in info && 'major' in info) {
-                    if (versionCode != info.version) {
-                        showBox(info.major);
+                let plugins = JSON.parse(data);
+                for (let s of plugins) {
+                    if (s.name == 'command-palette' && s.version != currentVersion) {
+                        showBox();
+                        break;
                     };
                 };
-            } else {
-                console.log('命令面板: 更新文件无效，不是有效json.');
             };
         });
         res.on("error", (e) => {
@@ -91,6 +85,4 @@ function checkUpdate() {
     });
 };
 
-module.exports = {
-    checkUpdate
-}
+module.exports = checkUpdate;

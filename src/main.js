@@ -1,43 +1,17 @@
 const hx = require('hbuilderx');
-const path = require('path');
 
-const data = require('./data.js');
+const data = require('./data/data.js');
 const openLocalPath = require('./utils/openLocalPath.js');
 const sourceControl = require('./utils/sourceControl.js');
 const create = require('./utils/createFile.js');
 const codec = require('./utils/codec.js');
-
-const pluginmanagerPath = path.join(hx.env.appRoot,'plugins','plugin-manager','pluginmanager.js');
-const pm = require(pluginmanagerPath);
-
-/**
- * @description activie third plugin，execute command
- * @param {Object} parm
- */
-function executeThirdCommand(info) {
-    let {pluginName,command} = info;
-
-    pm.activatePlugin({
-        "id":pluginName,
-        "":""
-    });
-    hx.commands.executeCommand(command);
-};
 
 /**
  * @description show command panl
  */
 async function main(parm) {
     // commands list
-    var picklistdata = [...data.allCommandList, ...data.svn_git, ...data.actions ];
-
-    try{
-        let thirdPlugin = require('./utils/thirdPlugin.json');
-        let allThirdPluginsCommands = thirdPlugin.commands;
-        picklistdata = [...picklistdata,...allThirdPluginsCommands]
-    }catch(e){
-        console.log(e);
-    };
+    var picklistdata = [...data.allCommandList, ...data.actions ];
 
     hx.window.showQuickPick(picklistdata, {
         placeHolder: '请选择要操作的菜单或命令',
@@ -70,9 +44,6 @@ async function main(parm) {
                 break;
             case 'standard_create':
                 create.createFile(result.info,parm);
-                break;
-            case 'codec':
-                codec.codec(result.info);
                 break;
             default:
                 break;
