@@ -1,20 +1,10 @@
 # 命令面板
 
-> 包含绝大多数HBuilderX命令菜单、以及第三方插件的命令菜单
-
-![](https://img-cdn-qiniu.dcloud.net.cn/uploads/article/20200712/4a07ab890c213cf810304d593ac68c0b.png)
+> 包含绝大多数HBuilderX命令菜单
 
 # 示例1: HBuilderX命令菜单
 
-![示例1: 系统](https://img-cdn-qiniu.dcloud.net.cn/uploads/article/20200712/f38f2afc33bde4afadf32afc0fcfde02.png)
-
-# 示例2: 其它插件
-
-![示例2: 第三方插件](https://img-cdn-qiniu.dcloud.net.cn/uploads/article/20200712/b0d519c23fee0ea281b1d541e28d3e85.png)
-
-# 示例3: 其它小功能
-
-![示例2](https://img-cdn-qiniu.dcloud.net.cn/uploads/article/20200712/563f23912fec995ebb877acbcc5cf1db.png)
+![示例1: 系统](https://ask.dcloud.net.cn/uploads/article/20230507/2c9c9c42760a811c81014f5557d7c2d1.png)
 
 
 # 配置快捷键
@@ -24,6 +14,6 @@
 ```
 {
     "key":"",
-    "command": "extension.commandPalette"
+    "command": "commandPalette.main"
 }
 ```
